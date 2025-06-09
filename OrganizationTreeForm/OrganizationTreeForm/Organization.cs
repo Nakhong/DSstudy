@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OrganizationTreeForm
 {
-    public partial class Form1 : Form
+    public partial class Organization : Form
     {
-        public Form1()
+        public Organization()
         {
             InitializeComponent();
         }
