@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrganizationTreeForm.Model
 {
-    class Department : Company
+    public class Department : Company
     {
         public string DepartmentName { get; set; }
     }
