@@ -20,9 +20,9 @@ namespace OrganizationTreeForm.View
             {
                 if (!companyNodes.ContainsKey(emp.CompanyName))
                 {
-                    TreeNode companyNode = new TreeNode(emp.CompanyName);
+                    TreeNode companyNode = new TreeNode(emp.CompanyName); //TreeNode로 인스턴스 생성
                     companyNodes[emp.CompanyName] = companyNode;
-                    orgTV.Nodes.Add(companyNode);
+                    orgTV.Nodes.Add(companyNode); // Treeview 컨트롤에 추가.
                 }
 
                 var companyNodeRef = companyNodes[emp.CompanyName];
