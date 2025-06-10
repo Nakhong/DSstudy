@@ -22,9 +22,14 @@ namespace OrganizationTreeForm
             TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(), OrgTV);
         }
 
+        /// <summary>
+        /// TreeNode 선택 시 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrgTV_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            //선택 시 fullPath로 \\로 나온다.
+            //선택 시 fullPath로 \\로 나온다. "이삭엔지니어링\\DS사업본부\\홍화낙 (전임)"
         }
     }
 }

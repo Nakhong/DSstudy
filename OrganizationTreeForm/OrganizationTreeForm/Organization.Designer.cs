@@ -44,22 +44,24 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.OrgTV);
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1525, 749);
-            this.splitContainer1.SplitterDistance = 507;
+            this.splitContainer1.Size = new System.Drawing.Size(1334, 599);
+            this.splitContainer1.SplitterDistance = 443;
             this.splitContainer1.TabIndex = 0;
             // 
             // OrgTV
             // 
             this.OrgTV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrgTV.Location = new System.Drawing.Point(0, 31);
+            this.OrgTV.Location = new System.Drawing.Point(0, 26);
+            this.OrgTV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrgTV.Name = "OrgTV";
-            this.OrgTV.Size = new System.Drawing.Size(507, 718);
+            this.OrgTV.Size = new System.Drawing.Size(443, 573);
             this.OrgTV.TabIndex = 1;
             this.OrgTV.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.OrgTV_NodeMouseClick);
             // 
@@ -73,27 +75,30 @@
             this.tableLayoutPanel1.Controls.Add(this.AddBtn, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(507, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(443, 26);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SearchTB
             // 
             this.SearchTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SearchTB.Location = new System.Drawing.Point(3, 3);
+            this.SearchTB.Location = new System.Drawing.Point(3, 2);
+            this.SearchTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchTB.Name = "SearchTB";
-            this.SearchTB.Size = new System.Drawing.Size(369, 25);
+            this.SearchTB.Size = new System.Drawing.Size(322, 21);
             this.SearchTB.TabIndex = 0;
             // 
             // AddBtn
             // 
             this.AddBtn.AutoSize = true;
             this.AddBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddBtn.Location = new System.Drawing.Point(378, 3);
+            this.AddBtn.Location = new System.Drawing.Point(331, 2);
+            this.AddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(126, 25);
+            this.AddBtn.Size = new System.Drawing.Size(109, 22);
             this.AddBtn.TabIndex = 1;
             this.AddBtn.Text = "추가";
             this.AddBtn.UseVisualStyleBackColor = true;
@@ -108,10 +113,11 @@
             // 
             // Organization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1525, 749);
+            this.ClientSize = new System.Drawing.Size(1334, 599);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Organization";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);

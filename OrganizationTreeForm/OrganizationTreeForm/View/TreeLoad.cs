@@ -14,9 +14,9 @@ namespace OrganizationTreeForm.View
         public Dictionary<string, TreeNode> companyNodes = new Dictionary<string, TreeNode>();
         private Dictionary<string, TreeNode> departmentNodes = new Dictionary<string, TreeNode>();
 
-        public TreeLoad(List<Employee> list, TreeView orgTV)
+        public TreeLoad(List<Employee> list, TreeView orgTV) // csv row로 list 추가
         {
-            foreach (var emp in list)
+            foreach (var emp in list) // employee class 순환
             {
                 if (!companyNodes.ContainsKey(emp.CompanyName))
                 {
