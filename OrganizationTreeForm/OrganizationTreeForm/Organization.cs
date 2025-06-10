@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrganizationTreeForm.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
+            Company OrgTree = new Company();
         }
     }
 }
