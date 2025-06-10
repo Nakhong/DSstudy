@@ -1,4 +1,6 @@
 ﻿using OrganizationTreeForm.Model;
+using OrganizationTreeForm.Utils;
+using OrganizationTreeForm.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +18,8 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
-            Company OrgTree = new Company();
+            
+            TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(),OrgTV);
         }
     }
 }

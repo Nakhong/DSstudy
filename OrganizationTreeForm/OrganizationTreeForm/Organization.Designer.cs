@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.OrgTV = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SearchTB = new System.Windows.Forms.TextBox();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer1.Panel1.Controls.Add(this.OrgTV);
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             // 
             // splitContainer1.Panel2
@@ -58,6 +58,14 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // OrgTV
+            // 
+            this.OrgTV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrgTV.Location = new System.Drawing.Point(0, 31);
+            this.OrgTV.Name = "OrgTV";
+            this.OrgTV.Size = new System.Drawing.Size(266, 419);
+            this.OrgTV.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -94,14 +102,6 @@
             this.AddBtn.Text = "추가";
             this.AddBtn.UseVisualStyleBackColor = true;
             // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 31);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(266, 419);
-            this.treeView1.TabIndex = 1;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -116,13 +116,13 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(530, 450);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // Form1
+            // Organization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "Organization";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -141,7 +141,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox SearchTB;
         private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView OrgTV;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
