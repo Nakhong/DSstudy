@@ -19,7 +19,7 @@ namespace OrganizationTreeForm
         {
             InitializeComponent();
             
-            TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(),OrgTV);
+            TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(), OrgTV);
         }
     }
 }

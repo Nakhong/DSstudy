@@ -25,13 +25,7 @@ namespace OrganizationTreeForm.Utils
                 var parts = line.Split(';');
                 if (parts.Length < 8) continue;
 
-                var emp = new Employee(
-                    parts[0], parts[2], parts[1], // 회사명, 주소, 전화
-                    parts[3],                     // 부서명
-                    parts[4], parts[6],           // 이름, 번호
-                    parts[5],                     // 직급
-                    parts[7]                      // 이메일
-                );
+                var emp = new Employee(parts[0], parts[1], parts[2], parts[3], parts[4], parts[6], parts[5], parts[7]);
                 list.Add(emp);
             }
 

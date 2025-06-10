@@ -13,11 +13,9 @@ namespace OrganizationTreeForm.Model
         public string EmployeeNumber { get; set; }
         public string EmployeePosition { get; set; }
         public string EmployeeEmail { get; set; }
-        public Employee() {
-            
-        }
+        public Employee() {}
 
-        public Employee(string companyName,string companyAddress,string companyNumber,string departmentName, string employeeName, string employeeNumber, string employeePosition, string employeeEmail) {
+        public Employee(string companyName,string companyNumber, string companyAddress , string departmentName, string employeeName, string employeeNumber, string employeePosition, string employeeEmail) {
             CompanyName = companyName;
             CompanyAddress = companyAddress;
             CompanyNumber = companyNumber;
@@ -27,7 +25,5 @@ namespace OrganizationTreeForm.Model
             EmployeeEmail = employeeEmail;
             EmployeePosition = employeePosition;
         }
-
-
     }
 }
