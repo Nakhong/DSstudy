@@ -10,10 +10,9 @@ namespace OrganizationTreeForm.Utils
 {
     public static class CSVHelper
     {
+        private static string path = $"{AppDomain.CurrentDomain.BaseDirectory}\\Data\\Data.csv";
         public static List<Employee> ReadCSV()
         {
-            string path = $"{AppDomain.CurrentDomain.BaseDirectory}\\Data\\Data.csv";
-
             StreamReader sr = new StreamReader(path, Encoding.UTF8);
 
             var list = new List<Employee>();

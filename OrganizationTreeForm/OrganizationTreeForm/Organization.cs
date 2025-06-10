@@ -21,5 +21,10 @@ namespace OrganizationTreeForm
             
             TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(), OrgTV);
         }
+
+        private void OrgTV_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            //선택 시 fullPath로 \\로 나온다.
+        }
     }
 }
