@@ -18,7 +18,12 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
-            
+            Company c2 = new Company();
+            Company c3 = new Company();
+
+            Department d3 = new Department();
+            Department d2 = new Department();
+
             TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(), OrgTV);
         }
 

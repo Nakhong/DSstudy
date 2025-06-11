@@ -18,7 +18,7 @@ namespace OrganizationTreeForm.Utils
         {
             StreamReader sr = new StreamReader(path, Encoding.UTF8);
 
-            var list = new List<Employee>(); // employee 컨테이너 생성
+            List<Employee> list = new List<Employee>(); // employee list 컨테이너 생성
 
             foreach (var line in File.ReadAllLines(path, Encoding.UTF8))
             {
@@ -27,7 +27,7 @@ namespace OrganizationTreeForm.Utils
                 var parts = line.Split(';'); // ;를 기준으로 나누기
                 if (parts.Length < 8) continue;
 
-                var emp = new Employee(parts[0], parts[1], parts[2], parts[3], parts[4], parts[6], parts[5], parts[7]); // employee 생성
+                Employee emp = new Employee(parts[0], parts[1], parts[2], parts[3], parts[4], parts[6], parts[5], parts[7]); // employee 생성
                 list.Add(emp);
             }
 
