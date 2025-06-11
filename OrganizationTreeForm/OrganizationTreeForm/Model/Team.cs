@@ -14,6 +14,7 @@ namespace OrganizationTreeForm.Model
         public Team()
         {
             Country = new List<Country>();
+            League = new List<League>();
             Player = new List<Player>();
         }
     }

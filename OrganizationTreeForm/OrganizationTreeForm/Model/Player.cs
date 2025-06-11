@@ -13,7 +13,7 @@ namespace OrganizationTreeForm.Model
         public List<Team> Team { get; set; }
         public Player()
         {
-            Country = new List<Country>();
+            League = new List<League>();
             Team = new List<Team>();
         }
     }
