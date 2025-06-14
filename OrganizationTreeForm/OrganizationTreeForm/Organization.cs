@@ -24,7 +24,8 @@ namespace OrganizationTreeForm
             Department d3 = new Department();
             Department d2 = new Department();
 
-            TreeLoad OrgTree = new TreeLoad(CSVHelper.ReadCSV(), OrgTV);
+            //TreeLoad OrgTree = new TreeLoad(ExcelHelper.ReadExcel());
+            ExcelHelper.ReadExcel();
         }
 
         /// <summary>

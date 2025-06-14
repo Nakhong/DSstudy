@@ -8,14 +8,9 @@ namespace OrganizationTreeForm.Model
 {
     public class Team
     {
-        public List<Country> Country { get; set; }
-        public List<League> League { get; set; }
-        public List<Player> Player { get; set; }
-        public Team()
-        {
-            Country = new List<Country>();
-            League = new List<League>();
-            Player = new List<Player>();
-        }
+        public List<Player> Players { get; set; } = new List<Player>();
+        public League ParentLeague { get; set; }
+        public string TeamName { get; set; }
+
     }
 }

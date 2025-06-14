@@ -8,13 +8,10 @@ namespace OrganizationTreeForm.Model
 {
     public class Player
     {
-        public List<Country> Country { get; set; }
-        public List<League> League { get; set; }
-        public List<Team> Team { get; set; }
-        public Player()
-        {
-            League = new List<League>();
-            Team = new List<Team>();
-        }
+        public Team ParentTeam { get; set; }
+        public string PlayerName { get; set; }
+        public string PlayerPosition { get; set; }
+        public int PlayerNumber { get; set; }
+
     }
 }
