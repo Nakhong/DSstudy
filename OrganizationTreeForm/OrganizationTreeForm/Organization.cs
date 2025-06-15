@@ -15,17 +15,24 @@ namespace OrganizationTreeForm
 {
     public partial class Organization : Form
     {
+        DBClass db;        // DBClass 변수
+        DataTable dt;		// 데이터테이블 변수
+
         public Organization()
         {
             InitializeComponent();
-            Company c2 = new Company();
-            Company c3 = new Company();
+            
+            //ExcelHelper.ReadExcel();
 
-            Department d3 = new Department();
-            Department d2 = new Department();
+            db = new DBClass(); // 생성자에 매개변수를 넘기면서 객체생성
+            dt = new DataTable(); // 객체생성
 
-            //TreeLoad OrgTree = new TreeLoad(ExcelHelper.ReadExcel());
-            ExcelHelper.ReadExcel();
+            string qry = "SELECT [UID],[CountryName],[CountryAddress],[LeagueName],[TeamName],[PlayerName],[PlayerNumber],[PlayerPosition] " +
+                        "FROM [Soccer$]";
+            string qry2 = "SELECT * FROM [Sheet1$]";
+
+            dt = db.Read(qry2); // 데이터테이블 형식으로 받아옴
+
         }
 
         /// <summary>
