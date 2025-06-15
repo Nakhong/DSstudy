@@ -17,7 +17,7 @@ namespace OrganizationTreeForm.Utils
         public void Conn()
         {
 
-            string connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={path};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";";
+            string connectionString = $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={path};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";";
             this.oleCon = new OleDbConnection(connectionString);
             oleCon.Open();
         }

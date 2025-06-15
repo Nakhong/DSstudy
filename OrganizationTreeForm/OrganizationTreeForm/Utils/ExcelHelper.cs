@@ -54,16 +54,16 @@ namespace OrganizationTreeForm.Utils
                 for (int r = startRow; r <= rowCount; r++)
                 {
                     // 셀 값 읽기 (Cells[row, column]은 1-indexed)
-                    // GetValue2()는 다양한 타입의 셀 값을 가져올 수 있으나, object로 반환
-                    // ToString()으로 변환 후 안전하게 처리
-                    string uidStr = (range.Cells[r, 1] as Excel.Range).Value2.ToString(); // Column A
-                    string countryName = (range.Cells[r, 2] as Excel.Range).Value2.ToString(); // Column B
-                    string countryAddress = (range.Cells[r, 3] as Excel.Range).Value2.ToString(); // Column C
-                    string leagueName = (range.Cells[r, 4] as Excel.Range).Value2.ToString(); // Column D
-                    string teamName = (range.Cells[r, 5] as Excel.Range).Value2.ToString(); // Column E
-                    string playerName = (range.Cells[r, 6] as Excel.Range).Value2.ToString(); // Column F
-                    string playerNumberStr = (range.Cells[r, 7] as Excel.Range).Value2.ToString(); // Column G
-                    string playerPosition = (range.Cells[r, 8] as Excel.Range).Value2.ToString(); // Column H
+                    // GetValue2()는 셀의 서식이 적용되지 않은 값을 반환한다. GetValue()는 셀의 서식이 적용된 값을 반환
+                    // ToString()으로 변환 후 스트링으로 처리
+                    string uidStr = (range.Cells[r, 1] as Excel.Range).Value.ToString(); // Column A
+                    string countryName = (range.Cells[r, 2] as Excel.Range).Value.ToString(); // Column B
+                    string countryAddress = (range.Cells[r, 3] as Excel.Range).Value.ToString(); // Column C
+                    string leagueName = (range.Cells[r, 4] as Excel.Range).Value.ToString(); // Column D
+                    string teamName = (range.Cells[r, 5] as Excel.Range).Value.ToString(); // Column E
+                    string playerName = (range.Cells[r, 6] as Excel.Range).Value.ToString(); // Column F
+                    string playerNumberStr = (range.Cells[r, 7] as Excel.Range).Value.ToString(); // Column G
+                    string playerPosition = (range.Cells[r, 8] as Excel.Range).Value.ToString(); // Column H
 
                     int playerNumber = 0;
                     if (!string.IsNullOrEmpty(playerNumberStr) && int.TryParse(playerNumberStr, out int parsedPlayerNumber))

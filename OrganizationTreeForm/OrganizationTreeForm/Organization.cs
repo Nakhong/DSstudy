@@ -21,17 +21,17 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
-            
-            //ExcelHelper.ReadExcel();
 
-            db = new DBClass(); // 생성자에 매개변수를 넘기면서 객체생성
-            dt = new DataTable(); // 객체생성
+            ExcelHelper.ReadExcel();
 
-            string qry = "SELECT [UID],[CountryName],[CountryAddress],[LeagueName],[TeamName],[PlayerName],[PlayerNumber],[PlayerPosition] " +
-                        "FROM [Soccer$]";
-            string qry2 = "SELECT * FROM [Sheet1$]";
+            //db = new DBClass(); // 생성자에 매개변수를 넘기면서 객체생성
+            //dt = new DataTable(); // 객체생성
 
-            dt = db.Read(qry2); // 데이터테이블 형식으로 받아옴
+            //string qry = "SELECT [UID],[CountryName],[CountryAddress],[LeagueName],[TeamName],[PlayerName],[PlayerNumber],[PlayerPosition] " +
+            //            "FROM [Soccer$]";
+            //string qry2 = "SELECT * FROM [Sheet1$]";
+
+            //dt = db.Read(qry2); // 데이터테이블 형식으로 받아옴
 
         }
 
