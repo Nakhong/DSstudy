@@ -53,7 +53,7 @@ namespace OrganizationTreeForm.Utils
 
                 for (int r = startRow; r <= rowCount; r++)
                 {
-                    // 셀 값 읽기 (Cells[row, column]은 1-indexed)
+                    // 셀 값 읽기 (Cells[row, column]
                     // GetValue2()는 셀의 서식이 적용되지 않은 값을 반환한다. GetValue()는 셀의 서식이 적용된 값을 반환
                     // ToString()으로 변환 후 스트링으로 처리
                     string uidStr = (range.Cells[r, 1] as Excel.Range).Value.ToString(); // Column A
