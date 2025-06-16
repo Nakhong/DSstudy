@@ -84,10 +84,10 @@ namespace OrganizationTreeForm.Utils
             }
         }
         /// <summary>
-        /// 재귀적으로 엑셀 워크시트를 파싱하여 트리 데이터를 구성합니다.
+        /// 재귀적으로 엑셀 워크시트를 파싱
         /// </summary>
         /// <param name="workBooks">현재 워크북</param>
-        /// <param name="currentWorksheetIndex">현재 파싱할 워크시트 인덱스 (1부터 시작)</param>
+        /// <param name="currentWorksheetIndex">현재 파싱할 워크시트 인덱스</param>
         public void TreeData(Excel.Workbook workBooks, int currentWorksheetIndex)
         {
             // 재귀 종료 조건: 유효한 워크시트 인덱스가 아닐 경우
@@ -143,173 +143,133 @@ namespace OrganizationTreeForm.Utils
             finally
             {
                 ReleaseExcelObject(range);
-                ReleaseExcelObject(currentWorksheet); // 현재 워크시트 객체 해제
+                ReleaseExcelObject(currentWorksheet);
             }
 
             // 다음 워크시트로 재귀 호출
             TreeData(workBooks, currentWorksheetIndex - 1);
         }
 
-        public void ParseCountriesSheet(Excel.Range range, int startRow)
+        private void ParseCountriesSheet(Excel.Range range, int startRow)
         {
-            int rowCount = range.Rows.Count;
-            for (int r = startRow; r <= rowCount; r++)
+            for (int row = startRow; row <= range.Rows.Count; row++)
             {
-                try
+                string name = range.Cells[row, 2].Value2.ToString().Trim();
+                string address = range.Cells[row, 3].Value2.ToString().Trim();
+                string level = range.Cells[row, 4].Value2.ToString().Trim();
+
+                // 이름이 없거나 이미 등록된 Country면 건너뛰기
+                if (string.IsNullOrEmpty(name) || countries.ContainsKey(name))
                 {
-                    string countryName = GetCellValue(range.Cells[r, 2]); // B열: 국가 이름
-                    string countryAddress = GetCellValue(range.Cells[r, 3]); // C열: 국가 주소
-
-                    if (!string.IsNullOrEmpty(countryName) && !countries.ContainsKey(countryName))
-                    {
-                        Country currentCountry = new Country
-                        {
-                            CountryName = countryName,
-                            CountryAddress = countryAddress,
-                            Leagues = new List<League>()
-                        };
-                        countries.Add(countryName, currentCountry);
-                    }
+                    continue;
                 }
-                catch (Exception ex)
+
+                countries[name] = new Country
                 {
-                    Console.WriteLine($"Country 시트 {r}행 파싱 오류: {ex.Message}");
-                }
-            }
-        }
-
-        public void ParseLeaguesSheet(Excel.Range range, int startRow)
-        {
-            int rowCount = range.Rows.Count;
-            for (int r = startRow; r <= rowCount; r++)
-            {
-                try
-                {
-                    string leagueName = GetCellValue(range.Cells[r, 1]); // A열: 리그 이름
-                    string parentCountryName = GetCellValue(range.Cells[r, 2]); // B열: 소속 국가 이름
-
-                    if (!string.IsNullOrEmpty(leagueName) && !leagues.ContainsKey(leagueName))
-                    {
-                        League currentLeague = new League
-                        {
-                            LeagueName = leagueName,
-                            Teams = new List<Team>()
-                        };
-                        leagues.Add(leagueName, currentLeague);
-
-                        // 부모 국가 존재 여부 확인
-                        if (countries.TryGetValue(parentCountryName, out Country parentCountry))
-                        {
-                            currentLeague.ParentCountry = parentCountry;
-                            parentCountry.Leagues.Add(currentLeague);
-                        }
-                        else
-                        {
-                            // 부모 국가가 아직 파싱되지 않았거나 존재하지 않음
-                            Console.WriteLine($"경고: 리그 '{leagueName}'의 부모 국가 '{parentCountryName}'를 찾을 수 없습니다. (League 시트 {r}행)");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"League 시트 {r}행 파싱 오류: {ex.Message}");
-                }
-            }
-        }
-
-        public void ParseTeamsSheet(Excel.Range range, int startRow)
-        {
-            int rowCount = range.Rows.Count;
-            for (int r = startRow; r <= rowCount; r++)
-            {
-                try
-                {
-                    string teamName = GetCellValue(range.Cells[r, 1]); // A열: 팀 이름
-                    string parentLeagueName = GetCellValue(range.Cells[r, 2]); // B열: 소속 리그 이름
-
-                    if (!string.IsNullOrEmpty(teamName) && !teams.ContainsKey(teamName))
-                    {
-                        Team currentTeam = new Team
-                        {
-                            TeamName = teamName,
-                            Players = new List<Player>()
-                        };
-                        teams.Add(teamName, currentTeam);
-
-                        // 부모 리그 존재 여부 확인
-                        if (leagues.TryGetValue(parentLeagueName, out League parentLeague))
-                        {
-                            currentTeam.ParentLeague = parentLeague;
-                            parentLeague.Teams.Add(currentTeam);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"경고: 팀 '{teamName}'의 부모 리그 '{parentLeagueName}'를 찾을 수 없습니다. (Team 시트 {r}행)");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Team 시트 {r}행 파싱 오류: {ex.Message}");
-                }
-            }
-        }
-
-        public void ParsePlayersSheet(Excel.Range range, int startRow)
-        {
-            int rowCount = range.Rows.Count;
-            for (int r = startRow; r <= rowCount; r++)
-            {
-                try
-                {
-                    string playerName = GetCellValue(range.Cells[r, 1]);       // A열: 선수 이름
-                    string playerNumberStr = GetCellValue(range.Cells[r, 2]);  // B열: 등번호
-                    string playerPosition = GetCellValue(range.Cells[r, 3]);   // C열: 포지션
-                    string parentTeamName = GetCellValue(range.Cells[r, 4]);   // D열: 소속 팀 이름
-
-                    if (string.IsNullOrEmpty(playerNumberStr))
-                    {
-                        Console.WriteLine($"경고: 선수 '{playerName}'의 등번호 '{playerNumberStr}'가 유효한 숫자가 아닙니다. 기본값 0으로 설정됩니다. (Player 시트 {r}행)");
-                    }
-
-                    if (!string.IsNullOrEmpty(playerName) && !players.ContainsKey(playerName))
-                    {
-                        Player currentPlayer = new Player
-                        {
-                            PlayerName = playerName,
-                            PlayerNumber = playerNumberStr,
-                            PlayerPosition = playerPosition
-                        };
-                        players.Add(playerName, currentPlayer);
-
-                        // 부모 팀 존재 여부 확인
-                        if (teams.TryGetValue(parentTeamName, out Team parentTeam))
-                        {
-                            currentPlayer.ParentTeam = parentTeam;
-                            parentTeam.Players.Add(currentPlayer);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"경고: 선수 '{playerName}'의 부모 팀 '{parentTeamName}'을(를) 찾을 수 없습니다. (Player 시트 {r}행)");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Player 시트 {r}행 파싱 오류: {ex.Message}");
-                }
+                    CountryName = name,
+                    CountryAddress = address,
+                    Level = level
+                };
             }
         }
 
 
-        // 셀 값을 안전하게 가져오는 헬퍼 메서드
-        private string GetCellValue(Excel.Range cell)
+        private void ParseLeaguesSheet(Excel.Range range, int startRow)
         {
-            if (cell?.Value2 != null)
+            for (int row = startRow; row <= range.Rows.Count; row++)
             {
-                return cell.Value2.ToString();
+                string leagueName = range.Cells[row, 2].Value2.ToString().Trim();
+                string parentCountryName = range.Cells[row, 3].Value2.ToString().Trim();
+                string level = range.Cells[row, 4].Value2.ToString().Trim();
+
+                if (string.IsNullOrEmpty(leagueName) || string.IsNullOrEmpty(parentCountryName))
+                {
+                    continue;
+                }
+
+                if (!countries.TryGetValue(parentCountryName, out var parentCountry))
+                {
+                    Console.WriteLine($"[경고] League의 상위 Country '{parentCountryName}'를 찾을 수 없음");
+                    continue;
+                }
+
+                var league = new League
+                {
+                    LeagueName = leagueName,
+                    ParentCountry = parentCountry,
+                    Level = level
+                };
+
+                parentCountry.Leagues.Add(league);
+                leagues[leagueName] = league;
             }
-            return string.Empty;
         }
+
+
+        private void ParseTeamsSheet(Excel.Range range, int startRow)
+        {
+            for (int row = startRow; row <= range.Rows.Count; row++)
+            {
+                string teamName = range.Cells[row, 2].Value2.ToString().Trim();
+                string parentLeagueName = range.Cells[row, 3].Value2.ToString().Trim();
+                string level = range.Cells[row, 4].Value2.ToString().Trim();
+
+                if (string.IsNullOrEmpty(teamName) || string.IsNullOrEmpty(parentLeagueName))
+                {
+                    continue;
+                };
+
+                if (!leagues.TryGetValue(parentLeagueName, out var parentLeague))
+                {
+                    Console.WriteLine($"[경고] Team의 상위 League '{parentLeagueName}'를 찾을 수 없음");
+                    continue;
+                }
+
+                var team = new Team
+                {
+                    TeamName = teamName,
+                    ParentLeague = parentLeague,
+                    Level = level
+                };
+
+                parentLeague.Teams.Add(team);
+                teams[teamName] = team;
+            }
+        }
+
+
+        private void ParsePlayersSheet(Excel.Range range, int startRow)
+        {
+            for (int row = startRow; row <= range.Rows.Count; row++)
+            {
+                string playerName = range.Cells[row, 2].Value2.ToString().Trim();
+                string position = range.Cells[row, 3].Value2.ToString().Trim();
+                string number = range.Cells[row, 4].Value2.ToString().Trim();
+                string parentTeamName = range.Cells[row, 5].Value2.ToString().Trim();
+                string level = range.Cells[row, 6].Value2.ToString().Trim();
+
+                if (string.IsNullOrEmpty(playerName) || string.IsNullOrEmpty(parentTeamName)) {
+                    continue;
+                }
+
+                if (!teams.TryGetValue(parentTeamName, out var parentTeam))
+                {
+                    Console.WriteLine($"[경고] Player의 상위 Team '{parentTeamName}'를 찾을 수 없음");
+                    continue;
+                }
+
+                var player = new Player
+                {
+                    PlayerName = playerName,
+                    PlayerNumber = number,
+                    PlayerPosition = position,
+                    ParentTeam = parentTeam,
+                    Level = level
+                };
+
+                parentTeam.Players.Add(player);
+            }
+        }
+
     }
 }
