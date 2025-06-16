@@ -21,8 +21,10 @@ namespace OrganizationTreeForm
             InitializeComponent();
 
             ExcelHelper excelHelper = new ExcelHelper();
-            Dictionary<string,Country> a = excelHelper.ReadExcel();
+            Dictionary<string,Country> excelData = excelHelper.ReadExcel();
 
+            TreeLoad treeLoad = new TreeLoad();
+            treeLoad.DisplayTree(excelData, OrgTV);
         }
 
         /// <summary>
