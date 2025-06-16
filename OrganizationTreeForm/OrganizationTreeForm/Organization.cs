@@ -22,7 +22,8 @@ namespace OrganizationTreeForm
         {
             InitializeComponent();
 
-            ExcelHelper.ReadExcel();
+            ExcelHelper excelHelper = new ExcelHelper();
+            excelHelper.ReadExcel();
 
             //db = new DBClass(); // 생성자에 매개변수를 넘기면서 객체생성
             //dt = new DataTable(); // 객체생성

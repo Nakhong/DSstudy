@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="legacy\ExcelHelper.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\League.cs" />
     <Compile Include="Model\Player.cs" />

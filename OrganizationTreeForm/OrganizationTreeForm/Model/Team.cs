@@ -12,6 +12,6 @@ namespace OrganizationTreeForm.Model
         public List<Player> Players { get; set; } = new List<Player>();
         public League ParentLeague { get; set; }
         public string TeamName { get; set; }
-
+        public string Level { get; set; }
     }
 }

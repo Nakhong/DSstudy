@@ -12,6 +12,6 @@ namespace OrganizationTreeForm.Model
         public string CountryName { get; set; }
         public string CountryAddress { get; set; }
         public List<League> Leagues { get; set; } = new List<League>();
-
+        public string Level { get; set; }
     }
 }
