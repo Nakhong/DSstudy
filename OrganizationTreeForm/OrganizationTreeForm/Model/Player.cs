@@ -12,7 +12,7 @@ namespace OrganizationTreeForm.Model
         public Team ParentTeam { get; set; }
         public string PlayerName { get; set; }
         public string PlayerPosition { get; set; }
-        public int PlayerNumber { get; set; }
+        public string PlayerNumber { get; set; }
         public string Level { get; set; }
     }
 }

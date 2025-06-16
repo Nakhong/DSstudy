@@ -15,8 +15,6 @@ namespace OrganizationTreeForm
 {
     public partial class Organization : Form
     {
-        DBClass db;        // DBClass 변수
-        DataTable dt;		// 데이터테이블 변수
 
         public Organization()
         {
@@ -24,15 +22,6 @@ namespace OrganizationTreeForm
 
             ExcelHelper excelHelper = new ExcelHelper();
             excelHelper.ReadExcel();
-
-            //db = new DBClass(); // 생성자에 매개변수를 넘기면서 객체생성
-            //dt = new DataTable(); // 객체생성
-
-            //string qry = "SELECT [UID],[CountryName],[CountryAddress],[LeagueName],[TeamName],[PlayerName],[PlayerNumber],[PlayerPosition] " +
-            //            "FROM [Soccer$]";
-            //string qry2 = "SELECT * FROM [Sheet1$]";
-
-            //dt = db.Read(qry2); // 데이터테이블 형식으로 받아옴
 
         }
 
