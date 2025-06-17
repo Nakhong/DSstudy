@@ -19,10 +19,10 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
-
+            //EXCEL 읽기
             ExcelHelper excelHelper = new ExcelHelper();
             Dictionary<string,Country> excelData = excelHelper.ReadExcel();
-
+            //TREE그리기
             TreeLoad treeLoad = new TreeLoad();
             treeLoad.DisplayTree(excelData, OrgTV);
         }
@@ -34,7 +34,7 @@ namespace OrganizationTreeForm
         /// <param name="e"></param>
         private void OrgTV_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            //선택 시 fullPath로 \\로 나온다. "이삭엔지니어링\\DS사업본부\\홍화낙 (전임)"
+            
         }
     }
 }

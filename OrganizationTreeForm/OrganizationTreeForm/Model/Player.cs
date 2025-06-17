@@ -13,6 +13,7 @@ namespace OrganizationTreeForm.Model
         public string PlayerName { get; set; }
         public string PlayerPosition { get; set; }
         public string PlayerNumber { get; set; }
+        public string PlayerFoot { get; set; }
         public string Level { get; set; }
     }
 }

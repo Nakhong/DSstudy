@@ -22,6 +22,7 @@ namespace OrganizationTreeForm.View
             foreach (var country in countries.Values)
             {
                 TreeNode countryNode = new TreeNode(country.CountryName);
+                countryNode.Tag = country;
                 AddLeagueNodes(country.Leagues, countryNode);
                 treeView.Nodes.Add(countryNode);
             }
@@ -34,6 +35,7 @@ namespace OrganizationTreeForm.View
             foreach (var league in leagues)
             {
                 TreeNode leagueNode = new TreeNode(league.LeagueName);
+                leagueNode.Tag = league;
                 AddTeamNodes(league.Teams, leagueNode);
                 parentNode.Nodes.Add(leagueNode);
             }
@@ -44,6 +46,7 @@ namespace OrganizationTreeForm.View
             foreach (var team in teams)
             {
                 TreeNode teamNode = new TreeNode(team.TeamName);
+                teamNode.Tag = team;
                 AddPlayerNodes(team.Players, teamNode);
                 parentNode.Nodes.Add(teamNode);
             }
@@ -54,6 +57,7 @@ namespace OrganizationTreeForm.View
             foreach (var player in players)
             {
                 TreeNode playerNode = new TreeNode($"{player.PlayerName} ({player.PlayerPosition})");
+                playerNode.Tag = player;
                 parentNode.Nodes.Add(playerNode);
             }
         }

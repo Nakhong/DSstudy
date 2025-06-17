@@ -149,7 +149,7 @@ namespace OrganizationTreeForm.Utils
             // 다음 워크시트로 재귀 호출
             TreeData(workBooks, currentWorksheetIndex - 1);
         }
-
+        // Country sheet 
         private void ParseCountriesSheet(Excel.Range range, int startRow)
         {
             for (int row = startRow; row <= range.Rows.Count; row++)
@@ -173,7 +173,7 @@ namespace OrganizationTreeForm.Utils
             }
         }
 
-
+        // League sheet 
         private void ParseLeaguesSheet(Excel.Range range, int startRow)
         {
             for (int row = startRow; row <= range.Rows.Count; row++)
@@ -205,7 +205,7 @@ namespace OrganizationTreeForm.Utils
             }
         }
 
-
+        // Team sheet 
         private void ParseTeamsSheet(Excel.Range range, int startRow)
         {
             for (int row = startRow; row <= range.Rows.Count; row++)
@@ -237,7 +237,7 @@ namespace OrganizationTreeForm.Utils
             }
         }
 
-
+        // Player sheet 
         private void ParsePlayersSheet(Excel.Range range, int startRow)
         {
             for (int row = startRow; row <= range.Rows.Count; row++)
@@ -247,6 +247,7 @@ namespace OrganizationTreeForm.Utils
                 string number = range.Cells[row, 4].Value2.ToString().Trim();
                 string parentTeamName = range.Cells[row, 5].Value2.ToString().Trim();
                 string level = range.Cells[row, 6].Value2.ToString().Trim();
+                string PlayerFoot = range.Cells[row, 7].Value2.ToString().Trim();
 
                 if (string.IsNullOrEmpty(playerName) || string.IsNullOrEmpty(parentTeamName)) {
                     continue;
@@ -254,7 +255,7 @@ namespace OrganizationTreeForm.Utils
 
                 if (!teams.TryGetValue(parentTeamName, out var parentTeam))
                 {
-                    Console.WriteLine($"[경고] Player의 상위 Team '{parentTeamName}'를 찾을 수 없음");
+                    Console.WriteLine($"Player의 상위 Team '{parentTeamName}'를 찾을 수 없습니다.");
                     continue;
                 }
 
@@ -264,7 +265,8 @@ namespace OrganizationTreeForm.Utils
                     PlayerNumber = number,
                     PlayerPosition = position,
                     ParentTeam = parentTeam,
-                    Level = level
+                    Level = level,
+                    PlayerFoot = PlayerFoot
                 };
 
                 parentTeam.Players.Add(player);
