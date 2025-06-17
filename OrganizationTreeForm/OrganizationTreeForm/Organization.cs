@@ -30,6 +30,11 @@ namespace OrganizationTreeForm
 
             dt = db.Read(qry2); // 데이터테이블 형식으로 받아옴
 
+            foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine($"{row["Uid"]}, {row["PlayerName"]}, {row["PlayerPosition"]}");
+            }
+
             InitializeComponent();
             //EXCEL 읽기
             //ExcelHelper excelHelper = new ExcelHelper();
