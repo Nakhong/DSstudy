@@ -23,7 +23,6 @@ namespace OrganizationTreeForm.Utils
         private Dictionary<string, Country> countries = new Dictionary<string, Country>();
         private Dictionary<string, League> leagues = new Dictionary<string, League>();
         private Dictionary<string, Team> teams = new Dictionary<string, Team>();
-        private Dictionary<string, Player> players = new Dictionary<string, Player>();
 
         public Dictionary<string, Country> ReadExcel()
         {
