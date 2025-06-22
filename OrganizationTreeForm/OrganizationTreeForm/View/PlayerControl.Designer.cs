@@ -111,7 +111,6 @@
             this.FootResultLB.Name = "FootResultLB";
             this.FootResultLB.Size = new System.Drawing.Size(1169, 46);
             this.FootResultLB.TabIndex = 7;
-            this.FootResultLB.Text = "label9";
             this.FootResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FootLB
@@ -133,7 +132,6 @@
             this.PositionResultLB.Name = "PositionResultLB";
             this.PositionResultLB.Size = new System.Drawing.Size(1169, 38);
             this.PositionResultLB.TabIndex = 5;
-            this.PositionResultLB.Text = "label7";
             this.PositionResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PositionLB
@@ -155,7 +153,6 @@
             this.NumberResultLB.Name = "NumberResultLB";
             this.NumberResultLB.Size = new System.Drawing.Size(1169, 42);
             this.NumberResultLB.TabIndex = 3;
-            this.NumberResultLB.Text = "label5";
             this.NumberResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NumberLB
@@ -176,7 +173,6 @@
             this.NameResultLB.Name = "NameResultLB";
             this.NameResultLB.Size = new System.Drawing.Size(1163, 34);
             this.NameResultLB.TabIndex = 1;
-            this.NameResultLB.Text = "label3";
             this.NameResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NameLB
