@@ -12,7 +12,7 @@ using System.Data.OleDb;
 
 namespace OrganizationTreeForm.Utils
 {
-    public class ExcelHelper
+    public class ExcelHelper_
     {
         string path = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\Soccer.xlsx";
         Excel.Application excelApp = null;

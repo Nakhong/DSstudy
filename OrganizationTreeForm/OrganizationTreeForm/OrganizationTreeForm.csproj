@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -48,9 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="legacy\ExcelHelper.cs">
+    <Compile Include="legacy\Country.cs" />
+    <Compile Include="legacy\DBHelper-.cs" />
+    <Compile Include="legacy\ExcelHelper-.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="legacy\League-.cs" />
+    <Compile Include="legacy\Player_.cs" />
+    <Compile Include="legacy\Team_.cs" />
+    <Compile Include="legacy\TreeLoad_.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\League.cs" />
     <Compile Include="Model\Player.cs" />
@@ -63,7 +69,7 @@
     </Compile>
     <Compile Include="legacy\Company.cs" />
     <Compile Include="legacy\Department.cs" />
-    <Compile Include="legacy\Employee.cs" />
+    <Compile Include="legacy\Employee-.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\DBHelper.cs" />

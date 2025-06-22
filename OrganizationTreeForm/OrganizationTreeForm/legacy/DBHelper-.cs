@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace OrganizationTreeForm.Utils
 {
-    public class DBHelper
+    public class DBHelper_
     {
         OleDbConnection oleCon;
         private static string path = $"{AppDomain.CurrentDomain.BaseDirectory}Data\\Soccer.xlsx";
+
+        DBHelper db;        // DBClass 변수
+        DataTable dt;       // 데이터테이블 변수
 
         // 연결 함수
         public void Conn()

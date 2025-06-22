@@ -3,26 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace OrganizationTreeForm.Model
 {
-    public class League
+    public class League_
     {
         public string Uid { get; set; }
         public string LeagueName { get; set; }
         public List<Team> Teams { get; set; } = new List<Team>();
         public Country ParentCountry { get; set; }
         public string Level { get; set; }
-
-        public TreeNode ToTreeNode()
-        {
-            TreeNode node = new TreeNode(LeagueName) { Name = Uid };
-            foreach (var team in Teams)
-            {
-                node.Nodes.Add(team.ToTreeNode());
-            }
-            return node;
-        }
     }
 }

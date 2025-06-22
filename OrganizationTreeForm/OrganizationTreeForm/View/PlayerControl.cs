@@ -16,5 +16,14 @@ namespace OrganizationTreeForm.View
         {
             InitializeComponent();
         }
+
+        // 선수 정보 설정 메서드
+        public void SetPlayerInfo(string name, string number, string position, string foot)
+        {
+            NameResultLB.Text = name;
+            NumberResultLB.Text = number;
+            PositionResultLB.Text = position;
+            FootResultLB.Text = foot;
+        }
     }
 }

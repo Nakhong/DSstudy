@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrganizationTreeForm.Model
 {
-    public class Player
+    public class Player_
     {
         //DB VALIDATION
         public string Uid { get; set; }
@@ -16,6 +16,5 @@ namespace OrganizationTreeForm.Model
         public string PlayerNumber { get; set; }
         public string PlayerFoot { get; set; }
         public string Level { get; set; }
-        public string ParentUid { get; internal set; }
     }
 }
