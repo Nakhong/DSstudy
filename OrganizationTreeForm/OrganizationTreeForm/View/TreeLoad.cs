@@ -24,11 +24,11 @@ namespace OrganizationTreeForm.View
 
             foreach (DataRow row in dt.Rows)
             {
-                string level = row["Level"]?.ToString();
-                string uid = row["Uid"]?.ToString();
-                string name = row["Name"]?.ToString();
-                string address = row["Address"]?.ToString();
-                string parentUid = row["parentUid"]?.ToString();
+                string level = row["Level"].ToString();
+                string uid = row["Uid"].ToString();
+                string name = row["Name"].ToString();
+                string address = row["Address"].ToString();
+                string parentUid = row["parentUid"].ToString();
 
                 switch (level)
                 {
@@ -77,9 +77,9 @@ namespace OrganizationTreeForm.View
                         {
                             Uid = uid,
                             PlayerName = name,
-                            PlayerNumber = row["PlayerNumber"]?.ToString(),
-                            PlayerFoot = row["Foot"]?.ToString(),
-                            PlayerPosition = row["Position"]?.ToString(),
+                            PlayerNumber = row["PlayerNumber"].ToString(),
+                            PlayerFoot = row["Foot"].ToString(),
+                            PlayerPosition = row["Position"].ToString(),
                             Level = level,
                             ParentUid = parentUid
                         };
