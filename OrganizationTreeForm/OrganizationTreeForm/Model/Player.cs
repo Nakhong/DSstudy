@@ -18,6 +18,7 @@ namespace OrganizationTreeForm.Model
         public string PlayerNumber { get; set; }
         public string PlayerFoot { get; set; }
         public string Level { get; set; }
+        public string ImagePath { get; set; }
 
         public static List<Player> LoadByParent(string parentUid)
         {
@@ -35,7 +36,8 @@ namespace OrganizationTreeForm.Model
                     PlayerPosition = row["Position"].ToString(),
                     PlayerNumber = row["PlayerNumber"].ToString(),
                     PlayerFoot = row["Foot"].ToString(),
-                    Level = row["Level"].ToString()
+                    Level = row["Level"].ToString(),
+                    ImagePath = row["ImagePath"].ToString()
                 });
             }
             return players;

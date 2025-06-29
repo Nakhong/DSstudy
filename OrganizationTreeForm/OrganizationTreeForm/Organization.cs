@@ -30,6 +30,9 @@ namespace OrganizationTreeForm
 
             OrgTV.ExpandAll();
 
+            searchControl1.TreeView = this.OrgTV;
+            searchControl1.TargetPlayerControl = this.playerControl;
+
             //EXCEL 읽기
             //ExcelHelper excelHelper = new ExcelHelper();
             //Dictionary<string, Country> excelData = excelHelper.ReadExcel();
@@ -54,7 +57,8 @@ namespace OrganizationTreeForm
                     player.PlayerName,
                     player.PlayerNumber,
                     player.PlayerPosition,
-                    player.PlayerFoot
+                    player.PlayerFoot,
+                    player.ImagePath
                 );
             }
         }
