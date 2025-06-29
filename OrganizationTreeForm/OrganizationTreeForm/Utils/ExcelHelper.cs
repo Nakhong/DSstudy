@@ -196,7 +196,6 @@ namespace OrganizationTreeForm.Utils
                 var league = new League
                 {
                     LeagueName = leagueName,
-                    ParentCountry = parentCountry,
                     Level = level
                 };
 
@@ -228,7 +227,6 @@ namespace OrganizationTreeForm.Utils
                 var team = new Team
                 {
                     TeamName = teamName,
-                    ParentLeague = parentLeague,
                     Level = level
                 };
 
@@ -264,7 +262,6 @@ namespace OrganizationTreeForm.Utils
                     PlayerName = playerName,
                     PlayerNumber = number,
                     PlayerPosition = position,
-                    ParentTeam = parentTeam,
                     Level = level,
                     PlayerFoot = PlayerFoot
                 };

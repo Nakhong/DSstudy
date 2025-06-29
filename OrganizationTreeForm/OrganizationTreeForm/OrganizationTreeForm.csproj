@@ -82,6 +82,12 @@
     <Compile Include="View\PlayerControl.Designer.cs">
       <DependentUpon>PlayerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\SearchControl.Designer.cs">
+      <DependentUpon>SearchControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TreeLoad.cs" />
     <Content Include="공부한내용들\공부내용.txt" />
     <EmbeddedResource Include="Organization.resx">
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="View\PlayerControl.resx">
       <DependentUpon>PlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SearchControl.resx">
+      <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\Soccer.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

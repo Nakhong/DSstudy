@@ -20,12 +20,14 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
-            DBHelper db = new DBHelper();
-            DataTable dt = db.Read("SELECT * FROM [Soccer$]");
 
-            TreeNode tree = TreeLoad.BuildFromDataTable(dt);
-            
-            OrgTV.Nodes.Add(tree);
+            var countries = Country.LoadAll();
+
+            foreach (var country in countries)
+            {
+                OrgTV.Nodes.Add(country.ToTreeNode());
+            }
+
             OrgTV.ExpandAll();
 
             //EXCEL 읽기

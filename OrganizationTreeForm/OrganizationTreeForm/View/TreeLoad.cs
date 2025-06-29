@@ -51,7 +51,6 @@ namespace OrganizationTreeForm.View
                         };
                         if (countries.ContainsKey(parentUid))
                         {
-                            league.ParentCountry = countries[parentUid];
                             countries[parentUid].Leagues.Add(league);
                         }
                         leagues[uid] = league;
@@ -66,7 +65,6 @@ namespace OrganizationTreeForm.View
                         };
                         if (leagues.ContainsKey(parentUid))
                         {
-                            team.ParentLeague = leagues[parentUid];
                             leagues[parentUid].Teams.Add(team);
                         }
                         teams[uid] = team;
