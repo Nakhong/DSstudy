@@ -11,7 +11,6 @@ namespace OrganizationTreeForm.Model
 {
     public class Country
     {
-        DBHelper db = new DBHelper();
 
         public string Uid { get; set; }
         public string CountryName { get; set; }
@@ -34,7 +33,7 @@ namespace OrganizationTreeForm.Model
             DBHelper db = new DBHelper();
             DataTable dt = db.Read("SELECT [Uid], [Name], [Address], [Level] FROM [Soccer$]");
             List<Country> countries = new List<Country>();
-
+            
             foreach (DataRow row in dt.Rows)
             {
                 Country country = new Country
