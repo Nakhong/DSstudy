@@ -30,23 +30,22 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.OrgTV = new System.Windows.Forms.TreeView();
-            this.searchTP = new System.Windows.Forms.TableLayoutPanel();
-            this.searchTB = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.orgTC = new System.Windows.Forms.TabControl();
             this.ResultTP = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.AddTP = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.playerControl = new OrganizationTreeForm.View.PlayerControl();
+            this.searchControl1 = new OrganizationTreeForm.View.SearchControl();
+            this.searchTP = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.searchTP.SuspendLayout();
             this.orgTC.SuspendLayout();
             this.ResultTP.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.searchTP.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -71,50 +70,12 @@
             // OrgTV
             // 
             this.OrgTV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrgTV.Location = new System.Drawing.Point(0, 29);
+            this.OrgTV.Location = new System.Drawing.Point(0, 32);
             this.OrgTV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrgTV.Name = "OrgTV";
-            this.OrgTV.Size = new System.Drawing.Size(442, 570);
+            this.OrgTV.Size = new System.Drawing.Size(442, 567);
             this.OrgTV.TabIndex = 1;
             this.OrgTV.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.OrgTV_NodeMouseClick);
-            // 
-            // searchTP
-            // 
-            this.searchTP.AutoSize = true;
-            this.searchTP.ColumnCount = 2;
-            this.searchTP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.06015F));
-            this.searchTP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.93985F));
-            this.searchTP.Controls.Add(this.searchTB, 0, 0);
-            this.searchTP.Controls.Add(this.searchBtn, 1, 0);
-            this.searchTP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchTP.Location = new System.Drawing.Point(0, 0);
-            this.searchTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchTP.Name = "searchTP";
-            this.searchTP.RowCount = 1;
-            this.searchTP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchTP.Size = new System.Drawing.Size(442, 29);
-            this.searchTP.TabIndex = 0;
-            // 
-            // searchTB
-            // 
-            this.searchTB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchTB.Location = new System.Drawing.Point(2, 4);
-            this.searchTB.Margin = new System.Windows.Forms.Padding(0);
-            this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(322, 21);
-            this.searchTB.TabIndex = 0;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.AutoSize = true;
-            this.searchBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchBtn.Location = new System.Drawing.Point(330, 2);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(109, 25);
-            this.searchBtn.TabIndex = 1;
-            this.searchBtn.Text = "검색";
-            this.searchBtn.UseVisualStyleBackColor = true;
             // 
             // orgTC
             // 
@@ -140,6 +101,15 @@
             this.ResultTP.Text = "결과";
             this.ResultTP.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.playerControl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(874, 569);
+            this.panel2.TabIndex = 0;
+            // 
             // AddTP
             // 
             this.AddTP.Location = new System.Drawing.Point(4, 22);
@@ -159,15 +129,6 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.playerControl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(874, 569);
-            this.panel2.TabIndex = 0;
-            // 
             // playerControl
             // 
             this.playerControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -176,6 +137,29 @@
             this.playerControl.Name = "playerControl";
             this.playerControl.Size = new System.Drawing.Size(874, 569);
             this.playerControl.TabIndex = 0;
+            // 
+            // searchControl1
+            // 
+            this.searchControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchControl1.Location = new System.Drawing.Point(3, 3);
+            this.searchControl1.Name = "searchControl1";
+            this.searchControl1.Size = new System.Drawing.Size(436, 26);
+            this.searchControl1.TabIndex = 2;
+            // 
+            // searchTP
+            // 
+            this.searchTP.AutoSize = true;
+            this.searchTP.ColumnCount = 1;
+            this.searchTP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.06015F));
+            this.searchTP.Controls.Add(this.searchControl1, 0, 0);
+            this.searchTP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchTP.Location = new System.Drawing.Point(0, 0);
+            this.searchTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchTP.Name = "searchTP";
+            this.searchTP.RowCount = 1;
+            this.searchTP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchTP.Size = new System.Drawing.Size(442, 32);
+            this.searchTP.TabIndex = 0;
             // 
             // Organization
             // 
@@ -191,11 +175,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.searchTP.ResumeLayout(false);
-            this.searchTP.PerformLayout();
             this.orgTC.ResumeLayout(false);
             this.ResultTP.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.searchTP.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -203,9 +186,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TableLayoutPanel searchTP;
-        private System.Windows.Forms.TextBox searchTB;
-        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.TreeView OrgTV;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl orgTC;
@@ -213,6 +193,8 @@
         private System.Windows.Forms.TabPage ResultTP;
         private System.Windows.Forms.Panel panel2;
         private View.PlayerControl playerControl;
+        private System.Windows.Forms.TableLayoutPanel searchTP;
+        private View.SearchControl searchControl1;
     }
 }
 

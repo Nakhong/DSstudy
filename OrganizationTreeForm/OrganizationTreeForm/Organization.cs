@@ -20,13 +20,18 @@ namespace OrganizationTreeForm
         public Organization()
         {
             InitializeComponent();
-            DBHelper db = new DBHelper();
-            DataTable dt = db.Read("SELECT * FROM [Soccer$]");
 
-            TreeNode tree = TreeLoad.BuildFromDataTable(dt);
-            
-            OrgTV.Nodes.Add(tree);
+            var countries = Country.LoadAll();
+
+            foreach (var country in countries)
+            {
+                OrgTV.Nodes.Add(country.ToTreeNode());
+            }
+
             OrgTV.ExpandAll();
+
+            searchControl1.TreeView = this.OrgTV;
+            searchControl1.TargetPlayerControl = this.playerControl;
 
             //EXCEL 읽기
             //ExcelHelper excelHelper = new ExcelHelper();
@@ -52,7 +57,8 @@ namespace OrganizationTreeForm
                     player.PlayerName,
                     player.PlayerNumber,
                     player.PlayerPosition,
-                    player.PlayerFoot
+                    player.PlayerFoot,
+                    player.ImagePath
                 );
             }
         }

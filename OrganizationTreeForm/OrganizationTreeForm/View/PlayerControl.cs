@@ -18,12 +18,15 @@ namespace OrganizationTreeForm.View
         }
 
         // 선수 정보 설정 메서드
-        public void SetPlayerInfo(string name, string number, string position, string foot)
+        public void SetPlayerInfo(string name, string number, string position, string foot, string imagePath)
         {
             NameResultLB.Text = name;
             NumberResultLB.Text = number;
             PositionResultLB.Text = position;
             FootResultLB.Text = foot;
+            PBFace.ImageLocation = imagePath;
+
+            PBFace.SizeMode = PictureBoxSizeMode.Zoom;
         }
     }
 }

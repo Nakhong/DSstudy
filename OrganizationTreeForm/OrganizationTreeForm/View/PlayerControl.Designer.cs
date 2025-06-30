@@ -39,11 +39,13 @@
             this.NumberLB = new System.Windows.Forms.Label();
             this.NameResultLB = new System.Windows.Forms.Label();
             this.NameLB = new System.Windows.Forms.Label();
+            this.PBFace = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBFace)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -89,37 +91,38 @@
             this.tableLayoutPanel1.Controls.Add(this.NumberResultLB, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.NumberLB, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.NameResultLB, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.NameLB, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.NameLB, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.PBFace, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1453, 566);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // FootResultLB
             // 
             this.FootResultLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FootResultLB.Location = new System.Drawing.Point(284, 114);
+            this.FootResultLB.Location = new System.Drawing.Point(284, 339);
             this.FootResultLB.Margin = new System.Windows.Forms.Padding(0);
             this.FootResultLB.Name = "FootResultLB";
-            this.FootResultLB.Size = new System.Drawing.Size(1169, 46);
+            this.FootResultLB.Size = new System.Drawing.Size(1169, 113);
             this.FootResultLB.TabIndex = 7;
             this.FootResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FootLB
             // 
             this.FootLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FootLB.Location = new System.Drawing.Point(0, 114);
+            this.FootLB.Location = new System.Drawing.Point(0, 339);
             this.FootLB.Margin = new System.Windows.Forms.Padding(0);
             this.FootLB.Name = "FootLB";
-            this.FootLB.Size = new System.Drawing.Size(284, 46);
+            this.FootLB.Size = new System.Drawing.Size(284, 113);
             this.FootLB.TabIndex = 6;
             this.FootLB.Text = "주발";
             this.FootLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,20 +130,20 @@
             // PositionResultLB
             // 
             this.PositionResultLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PositionResultLB.Location = new System.Drawing.Point(284, 76);
+            this.PositionResultLB.Location = new System.Drawing.Point(284, 226);
             this.PositionResultLB.Margin = new System.Windows.Forms.Padding(0);
             this.PositionResultLB.Name = "PositionResultLB";
-            this.PositionResultLB.Size = new System.Drawing.Size(1169, 38);
+            this.PositionResultLB.Size = new System.Drawing.Size(1169, 113);
             this.PositionResultLB.TabIndex = 5;
             this.PositionResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PositionLB
             // 
             this.PositionLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PositionLB.Location = new System.Drawing.Point(0, 76);
+            this.PositionLB.Location = new System.Drawing.Point(0, 226);
             this.PositionLB.Margin = new System.Windows.Forms.Padding(0);
             this.PositionLB.Name = "PositionLB";
-            this.PositionLB.Size = new System.Drawing.Size(284, 38);
+            this.PositionLB.Size = new System.Drawing.Size(284, 113);
             this.PositionLB.TabIndex = 4;
             this.PositionLB.Text = "포지션";
             this.PositionLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,20 +151,20 @@
             // NumberResultLB
             // 
             this.NumberResultLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NumberResultLB.Location = new System.Drawing.Point(284, 34);
+            this.NumberResultLB.Location = new System.Drawing.Point(284, 113);
             this.NumberResultLB.Margin = new System.Windows.Forms.Padding(0);
             this.NumberResultLB.Name = "NumberResultLB";
-            this.NumberResultLB.Size = new System.Drawing.Size(1169, 42);
+            this.NumberResultLB.Size = new System.Drawing.Size(1169, 113);
             this.NumberResultLB.TabIndex = 3;
             this.NumberResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NumberLB
             // 
             this.NumberLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NumberLB.Location = new System.Drawing.Point(0, 34);
+            this.NumberLB.Location = new System.Drawing.Point(0, 113);
             this.NumberLB.Margin = new System.Windows.Forms.Padding(0);
             this.NumberLB.Name = "NumberLB";
-            this.NumberLB.Size = new System.Drawing.Size(284, 42);
+            this.NumberLB.Size = new System.Drawing.Size(284, 113);
             this.NumberLB.TabIndex = 2;
             this.NumberLB.Text = "등번호";
             this.NumberLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,20 +174,28 @@
             this.NameResultLB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameResultLB.Location = new System.Drawing.Point(287, 0);
             this.NameResultLB.Name = "NameResultLB";
-            this.NameResultLB.Size = new System.Drawing.Size(1163, 34);
+            this.NameResultLB.Size = new System.Drawing.Size(1163, 113);
             this.NameResultLB.TabIndex = 1;
             this.NameResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NameLB
             // 
             this.NameLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameLB.Location = new System.Drawing.Point(0, 0);
+            this.NameLB.Location = new System.Drawing.Point(0, 452);
             this.NameLB.Margin = new System.Windows.Forms.Padding(0);
             this.NameLB.Name = "NameLB";
-            this.NameLB.Size = new System.Drawing.Size(284, 34);
+            this.NameLB.Size = new System.Drawing.Size(284, 114);
             this.NameLB.TabIndex = 0;
             this.NameLB.Text = "이름";
             this.NameLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PBFace
+            // 
+            this.PBFace.Location = new System.Drawing.Point(3, 3);
+            this.PBFace.Name = "PBFace";
+            this.PBFace.Size = new System.Drawing.Size(278, 107);
+            this.PBFace.TabIndex = 8;
+            this.PBFace.TabStop = false;
             // 
             // PlayerControl
             // 
@@ -199,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PBFace)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +228,6 @@
         private System.Windows.Forms.Label NumberLB;
         private System.Windows.Forms.Label NameResultLB;
         private System.Windows.Forms.Label NameLB;
+        private System.Windows.Forms.PictureBox PBFace;
     }
 }
