@@ -18,6 +18,30 @@ namespace OrganizationTreeForm.Model
         public List<League> Leagues { get; set; } = new List<League>();
         public string Level { get; set; }
 
+        DBHelper db = new DBHelper();
+
+        public static List<Country> LoadAll()
+        {
+            DBHelper db = new DBHelper();
+            var dt = db.Read("SELECT * FROM [Soccer$] WHERE Level = '1'");
+            List<Country> countries = new List<Country>();
+            
+            foreach (DataRow row in dt.Rows)
+            {
+                var country = new Country
+                {
+                    Uid = row["Uid"].ToString(),
+                    CountryName = row["Name"].ToString(),
+                    CountryAddress = row["Address"].ToString(),
+                    Level = row["Level"].ToString()
+                };
+
+                country.Leagues = League.LoadByParent(country.Uid);
+                countries.Add(country);
+            }
+            return countries;
+        }
+
         public TreeNode ToTreeNode()
         {
             TreeNode node = new TreeNode(CountryName) { Name = Uid };
@@ -27,25 +51,6 @@ namespace OrganizationTreeForm.Model
             }
             return node;
         }
-
-        public List<Country> LoadCountries()
-        {
-            DBHelper db = new DBHelper();
-            DataTable dt = db.Read("SELECT [Uid], [Name], [Address], [Level] FROM [Soccer$]");
-            List<Country> countries = new List<Country>();
-            
-            foreach (DataRow row in dt.Rows)
-            {
-                Country country = new Country
-                {
-                    Uid = row["Uid"].ToString(),
-                    CountryName = row["Name"].ToString(),
-                    CountryAddress = row["Address"].ToString(),
-                    Level = row["Level"].ToString()
-                };
-                countries.Add(country);
-            }
-            return countries;
-        }
     }
+
 }
