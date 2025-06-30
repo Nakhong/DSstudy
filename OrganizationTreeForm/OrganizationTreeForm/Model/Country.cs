@@ -42,7 +42,7 @@ namespace OrganizationTreeForm.Model
 
         public TreeNode ToTreeNode()
         {
-            TreeNode node = new TreeNode(CountryName) { Name = Uid };
+            TreeNode node = new TreeNode(CountryName) { Name = Uid, Tag = this };
             foreach (var league in Leagues)
             {
                 node.Nodes.Add(league.ToTreeNode());

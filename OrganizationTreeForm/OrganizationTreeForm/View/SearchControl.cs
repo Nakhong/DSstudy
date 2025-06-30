@@ -69,7 +69,9 @@ namespace OrganizationTreeForm.View
             {
                 // 텍스트로 비교
                 if (node.Text.ToLower().Contains(keyword.ToLower()))
+                {
                     return node;
+                }
 
                 // Tag가 Player라면 이름도 검사
                 if (node.Tag is Player player)
@@ -84,7 +86,9 @@ namespace OrganizationTreeForm.View
                 // 하위 노드 검색 (재귀 호출)
                 TreeNode found = FindNodeByText(node.Nodes, keyword);
                 if (found != null)
+                {
                     return found;
+                }
             }
 
             return null;

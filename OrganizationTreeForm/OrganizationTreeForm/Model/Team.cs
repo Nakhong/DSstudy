@@ -41,7 +41,7 @@ namespace OrganizationTreeForm.Model
 
         public TreeNode ToTreeNode()
         {
-            TreeNode node = new TreeNode(TeamName) { Name = Uid };
+            TreeNode node = new TreeNode(TeamName) { Name = Uid, Tag = this };
             foreach (var player in Players)
             {
                 node.Nodes.Add(player.ToTreeNode());

@@ -38,8 +38,8 @@
             this.NumberResultLB = new System.Windows.Forms.Label();
             this.NumberLB = new System.Windows.Forms.Label();
             this.NameResultLB = new System.Windows.Forms.Label();
-            this.NameLB = new System.Windows.Forms.Label();
             this.PBFace = new System.Windows.Forms.PictureBox();
+            this.lh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -91,8 +91,8 @@
             this.tableLayoutPanel1.Controls.Add(this.NumberResultLB, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.NumberLB, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.NameResultLB, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.NameLB, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.PBFace, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lh, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -178,17 +178,6 @@
             this.NameResultLB.TabIndex = 1;
             this.NameResultLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // NameLB
-            // 
-            this.NameLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NameLB.Location = new System.Drawing.Point(0, 452);
-            this.NameLB.Margin = new System.Windows.Forms.Padding(0);
-            this.NameLB.Name = "NameLB";
-            this.NameLB.Size = new System.Drawing.Size(284, 114);
-            this.NameLB.TabIndex = 0;
-            this.NameLB.Text = "이름";
-            this.NameLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // PBFace
             // 
             this.PBFace.Location = new System.Drawing.Point(3, 3);
@@ -196,6 +185,15 @@
             this.PBFace.Size = new System.Drawing.Size(278, 107);
             this.PBFace.TabIndex = 8;
             this.PBFace.TabStop = false;
+            // 
+            // lh
+            // 
+            this.lh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lh.Location = new System.Drawing.Point(287, 452);
+            this.lh.Name = "lh";
+            this.lh.Size = new System.Drawing.Size(1163, 114);
+            this.lh.TabIndex = 9;
+            this.lh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PlayerControl
             // 
@@ -227,7 +225,7 @@
         private System.Windows.Forms.Label NumberResultLB;
         private System.Windows.Forms.Label NumberLB;
         private System.Windows.Forms.Label NameResultLB;
-        private System.Windows.Forms.Label NameLB;
         private System.Windows.Forms.PictureBox PBFace;
+        private System.Windows.Forms.Label lh;
     }
 }
