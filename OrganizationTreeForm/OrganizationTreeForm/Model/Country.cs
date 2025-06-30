@@ -18,8 +18,6 @@ namespace OrganizationTreeForm.Model
         public List<League> Leagues { get; set; } = new List<League>();
         public string Level { get; set; }
 
-        DBHelper db = new DBHelper();
-
         public static List<Country> LoadAll()
         {
             DBHelper db = new DBHelper();
