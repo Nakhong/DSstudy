@@ -55,11 +55,10 @@ namespace OrganizationTreeForm.View
                         player.ImagePath
                     );
                 }
-
             }
             else
             {
-                MessageBox.Show("일치하는 노드를 찾을 수 없습니다.");
+                MessageBox.Show("일치하는 선수를 찾을 수 없습니다.");
             }
         }
 

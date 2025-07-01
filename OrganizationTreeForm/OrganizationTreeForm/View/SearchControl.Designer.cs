@@ -37,10 +37,10 @@
             // searchTB
             // 
             this.searchTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchTB.Location = new System.Drawing.Point(0, 3);
-            this.searchTB.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.searchTB.Location = new System.Drawing.Point(0, 4);
+            this.searchTB.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(274, 21);
+            this.searchTB.Size = new System.Drawing.Size(313, 25);
             this.searchTB.TabIndex = 1;
             // 
             // searchTP
@@ -57,17 +57,17 @@
             this.searchTP.Name = "searchTP";
             this.searchTP.RowCount = 1;
             this.searchTP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchTP.Size = new System.Drawing.Size(370, 29);
+            this.searchTP.Size = new System.Drawing.Size(423, 35);
             this.searchTP.TabIndex = 2;
             // 
             // searchBtn
             // 
             this.searchBtn.AutoSize = true;
             this.searchBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchBtn.Location = new System.Drawing.Point(277, 2);
+            this.searchBtn.Location = new System.Drawing.Point(316, 2);
             this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(90, 25);
+            this.searchBtn.Size = new System.Drawing.Size(104, 31);
             this.searchBtn.TabIndex = 1;
             this.searchBtn.Text = "검색";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -75,11 +75,12 @@
             // 
             // SearchControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.searchTP);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SearchControl";
-            this.Size = new System.Drawing.Size(370, 28);
+            this.Size = new System.Drawing.Size(423, 35);
             this.searchTP.ResumeLayout(false);
             this.searchTP.PerformLayout();
             this.ResumeLayout(false);
